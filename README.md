@@ -9,9 +9,6 @@ This project implements a basic ERC-20-like token on the Ethereum blockchain. Th
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Demo Workflow](#demo-workflow)
-- [License](#license)
 
 ---
 
