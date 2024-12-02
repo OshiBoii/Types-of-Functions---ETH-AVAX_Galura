@@ -1,46 +1,28 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.0;
 
-contract MyToken {
-    // Public variables
-    string public tokenName = "Silver";
-    string public tokenAbbreviation = "SLVR";
-    uint public totalSupply = 0;
+// Importing OpenZeppelin contracts from CDN
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
-    // Address of the contract owner
-    address public owner;
+// Silver Token (SLVR)
+// Only contract owner should be able to mint tokens
+// Any user can transfer tokens
+// Any user can burn tokens
 
-    // Mapping to store balances
-    mapping(address => uint) public balances;
+contract Silver is ERC20, ERC20Burnable, Ownable {
 
-    // Modifier to restrict access to the owner
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can perform this action");
-        _;
+    // The constructor for the Silver token contract
+    constructor(address initialOwner) 
+        ERC20("Silver", "SLVR")  // Call the ERC20 constructor with token name and symbol
+        Ownable(initialOwner)  // Call the Ownable constructor to set the deployer as the owner
+    {
+        // The deployer's address is automatically set as the owner by Ownable constructor
     }
 
-    // Constructor to set the contract owner
-    constructor() {
-        owner = msg.sender;
-    }
-
-    // Mint function (restricted to the owner)
-    function mint(address _address, uint _value) public onlyOwner {
-        totalSupply += _value;
-        balances[_address] += _value;
-    }
-
-    // Burn function (open to all users but checks balance)
-    function burn(address _address, uint _value) public {
-        require(balances[_address] >= _value, "Insufficient balance to burn");
-        totalSupply -= _value;
-        balances[_address] -= _value;
-    }
-
-    // Transfer function (open to all users)
-    function transfer(address _to, uint _value) public {
-        require(balances[msg.sender] >= _value, "Insufficient balance to transfer");
-        balances[msg.sender] -= _value;
-        balances[_to] += _value;
+    // Mint function (only accessible by the contract owner)
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
     }
 }
