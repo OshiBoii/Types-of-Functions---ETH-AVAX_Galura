@@ -73,5 +73,5 @@ This project implements a basic ERC-20 token called *Silver* (SLVR) on the Ether
 
 This project is licensed under the MIT License.
 
-#Author
+## Author
 Ywan Scazi Galura | 202110347@fit.edu.ph
