@@ -1,7 +1,6 @@
 # Silver ERC-20 Token Solidity Contract
 
-This project implements a basic ERC-20 token called *Silver* (SLVR) on the Ethereum blockchain. The contract includes features such as minting, burning, and transferring tokens. Only the contract owner can mint new tokens, while any user can burn and transfer tokens. The implementation avoids redundant libraries for simplicity in academic demonstration, providing an opportunity to understand fundamental token operations. Feel free to modify the token name and symbol. 😊
-
+This project implements a basic ERC-20 token called *Silver* (SLVR) on the Ethereum blockchain. The contract includes features such as minting, burning, and transferring tokens. Only the contract owner can mint new tokens, while any user can burn and transfer tokens.
 ---
 
 ## Table of Contents
