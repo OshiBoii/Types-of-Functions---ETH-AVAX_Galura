@@ -1,6 +1,6 @@
 # Silver ERC-20 Token Solidity Contract
 
-This project implements a basic ERC-20 token called *Silver* (SLVR) on the Ethereum blockchain. The contract includes features such as minting, burning, and transferring tokens. Only the contract owner can mint new tokens, while any user can burn and transfer tokens.
+This project implements a basic ERC-20 token called *Silver* (SLVR) on the Ethereum blockchain. The contract includes features such as minting, burning, and transferring tokens. Only the contract owner can mint new tokens, while any user can burn and transfer tokens. Feel free to change the token name and symbol for your own usecase.
 ---
 
 ## Table of Contents
@@ -47,12 +47,10 @@ This project implements a basic ERC-20 token called *Silver* (SLVR) on the Ether
 ## Installation
 
 1. Open [Remix IDE](https://remix.ethereum.org/).
-2. Create a new file and name it appropriately (e.g., `Silver.sol`).
+2. Create a new file and name it appropriately (e.g., `Silver.sol` or anything related to your own token).
 3. Paste the contract code into the new file.
 4. Compile the contract using the Remix Solidity compiler (version `^0.8.0`).
-5. Deploy the contract using Remix’s **Deploy & Run** tab:
-   - Choose the **Injected Web3** environment (e.g., MetaMask or another Ethereum wallet connected).
-   - Deploy the contract by specifying the owner’s address during deployment.
+5. Deploy the contract using Remix’s **Deploy & Run** tab
 
 ---
 
